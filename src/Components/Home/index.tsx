@@ -1,7 +1,13 @@
 import React from 'react'
+import PlansList from '../PlansList';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <h1>Home</h1>
+      <PlansList />
+    </div>
   )
 }
+
+export default Home;
