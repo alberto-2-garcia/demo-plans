@@ -5,14 +5,9 @@ import { StoreAction, StoreStateType } from '../../stores/rootReducers';
 
 export default function Fetcher() {
   const dispatch = useDispatch<Dispatch<StoreAction>>();
-  const { addPlans } = new PlansAction();
-  const store = useStore<StoreStateType, StoreAction>();
-
-  console.log('store', store);
-  console.log('store', store.getState());
+  const { overridePlans } = new PlansAction();
 
   useEffect(() => {
-    console.log('fetcher')
     const plans: Plan[] = [
       {
         title: 'Ingeniero',
@@ -28,9 +23,8 @@ export default function Fetcher() {
       },
     ];
 
-    console.log('plans', plans)
+    dispatch(overridePlans(plans));
 
-    store.dispatch(addPlans(plans));
   }, []);
 
   return (
