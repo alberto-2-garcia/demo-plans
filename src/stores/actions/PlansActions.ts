@@ -1,11 +1,8 @@
+import { Plan } from "../../types/Plan";
+
 export function parsePlanID(id: string) {
   let ids = id.split('_');
   return `${ids[0].toLocaleUpperCase()} ${ids[1]}`;
-}
-
-export type Plan = {
-  title: string;
-  id: string;
 }
 
 export type PlanReducerAction = AddPlansAction | OverridePlansAction;

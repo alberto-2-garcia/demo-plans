@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import './styles.scss';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { parsePlanID, Plan as PlanType } from '../../stores/actions/PlansActions';
+import { parsePlanID } from '../../stores/actions/PlansActions';
+import { Plan as PlanType } from '../../types/Plan';
 import { StoreStateType } from '../../stores/rootReducers';
+import Semester from './Semester';
 
 export default function Plan() {
   const params = useParams();
@@ -11,7 +14,8 @@ export default function Plan() {
 
   const [currPlan, setCurrPlan] = useState<PlanType>({
     title: '',
-    id: ''
+    id: '',
+    semesters: []
   });
 
   useEffect(() => {
@@ -19,13 +23,17 @@ export default function Plan() {
     setCurrPlan(planInfo ? planInfo : currPlan);
   }, [plans])
 
-  const { title, id } = currPlan;
+  const { title, id, semesters } = currPlan;
 
   return (
     <div>
       <h1>Plan</h1>
-      <h2>{title}</h2>
-      <h2>{parsePlanID(id)}</h2>
+      <h2>{title} - {parsePlanID(id)}</h2>
+      <div className='courses-table'>
+        {semesters.map(sem => (
+          <Semester key={sem.number} semester={sem} />
+        ))}
+      </div>
     </div>
   )
 }

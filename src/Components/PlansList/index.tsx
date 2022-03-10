@@ -4,8 +4,9 @@ import Button from '../Button';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { StoreStateType } from '../../stores/rootReducers';
-import { parsePlanID, Plan } from '../../stores/actions/PlansActions';
+import { parsePlanID } from '../../stores/actions/PlansActions';
 import { PlansListProps } from './interface';
+import { Plan } from '../../types/Plan';
 
 const PlansList: FC<PlansListProps> = ({ planFilter }) => {
   const navigate = useNavigate();
