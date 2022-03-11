@@ -1,0 +1,21 @@
+.block {
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
+
+  &.semester-block {}
+
+  &.course-block {
+    padding: 5px;
+    > p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.semester {
+  flex-grow: 1;
+}

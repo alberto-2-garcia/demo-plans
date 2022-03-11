@@ -3,13 +3,12 @@ import { CourseProps } from './interface';
 
 const Course: FC<CourseProps> = ({ course }) => {
 
-  const { name, id, units } = course;
+  const { name, id, units, color } = course;
 
   return (
-    <div>
-      <p>{name}</p>
-      <p>{id}</p>
-      <p>{units}</p>
+    <div className='block course-block' style={{backgroundColor: color ?? '#BF7913'}}>
+      <p>{name} - {id}</p>
+      <p>Units: {units}</p>
     </div>
   )
 }

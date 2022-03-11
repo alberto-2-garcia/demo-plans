@@ -8,12 +8,14 @@ function createPlan() {
   const course = {
     name: 'Compis',
     id: 'TC2020',
-    units: 8
+    units: 8, 
+    color: '#e7a541'
   }
 
   const semester = {
     courses: [{...course}, {...course}, {...course}],
-    number: 1
+    number: 1,
+    color: '#e7a541'
   };
 
   const semesters = [{...semester}, {...semester}, {...semester}, {...semester}, {...semester}, {...semester}]
