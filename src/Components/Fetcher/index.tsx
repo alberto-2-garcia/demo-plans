@@ -12,13 +12,33 @@ function createPlan() {
     color: '#e7a541'
   }
 
+  const course2 = {
+    name: 'Algoritmos',
+    id: 'TC2010',
+    units: 8, 
+    color: '#e7a541'
+  }
+
+  const course3 = {
+    name: 'Videpjuegps',
+    id: 'TC2021',
+    units: 8, 
+    color: '#e7a541'
+  }
+
   const semester = {
-    courses: [{...course}, {...course}, {...course}],
-    number: 1,
+    courses: [{...course}, {...course2}, {...course3}],
     color: '#e7a541'
   };
 
-  const semesters = [{...semester}, {...semester}, {...semester}, {...semester}, {...semester}, {...semester}]
+  const semesters = [
+    {...semester, number: 1},
+    {...semester, number: 2},
+    {...semester, number: 3},
+    {...semester, number: 4},
+    {...semester, number: 5},
+    {...semester, number: 6}
+  ]
 
   const plans: Plan[] = [
     {
